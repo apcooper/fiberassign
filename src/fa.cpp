@@ -157,14 +157,15 @@ int main(int argc, char **argv) {
 	print_hist("Unused fibers",5,histogram(A.unused_fbp(pp,F),5),false);
     //try assigning SF and SS before real time assignment
     for (int jused=0;jused<F.NUsedplate;++jused){
-
         int j=A.suborder[jused];
+        printf("j = %d  jused= %d\n",j,jused);
+        std::cout.flush();
         assign_sf_ss(j,M,P,pp,F,A); // Assign SS and SF for each tile
         assign_unused(j,M,P,pp,F,A);
     }
     if(F.diagnose)diagnostic(M,Secret,F,A);
     init_time_at(time,"# Begin real time assignment",t);
-
+    std::cout.flush();
 	//Execute plan, updating targets at intervals
     for(int i=0;i<F.pass_intervals.size();i++){
         printf(" i=%d interval %d \n",i,F.pass_intervals[i]);
