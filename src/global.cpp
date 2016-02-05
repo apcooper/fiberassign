@@ -647,6 +647,7 @@ void display_results(str outdir, const Gals& Secret,const MTL& M, const Plates& 
         }
 	}
     printf(" collected obsrv \n");
+    std::cout.flush();
 	// Add the 3 columns of tot, fibs, obs
 	Table with_tots = obsrv;
 	for (int i=0; i<F.Categories-2; i++) {
@@ -659,6 +660,7 @@ void display_results(str outdir, const Gals& Secret,const MTL& M, const Plates& 
 		with_tots[i].push_back(obs);
 	}
     printf(" did with_tots \n");
+    std::cout.flush();
 	//print_table("  Remaining observations (without negative obs ones)",with_tots,latex,F.kind);
 	Dtable obs_per_sqd = ddivide_floor(with_tots,F.TotalArea);
 
