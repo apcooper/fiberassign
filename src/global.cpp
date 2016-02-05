@@ -643,7 +643,7 @@ void display_results(str outdir, const Gals& Secret,const MTL& M, const Plates& 
         if(!M[g].SS && !M[g].SF){
 		int c= Secret[g].id;
 		int m = min(M[g].nobs_done,MaxObs);
-            if(g<100){
+            if(g%10000==0){
                 printf("g  %d  secret id  %d   m  %d\n",g,c,m);
                 std::cout.flush();
             }
