@@ -634,12 +634,12 @@ void diagnostic(const MTL& M, const Gals& Secret, Feat& F, const Assignment& A){
 
 void display_results(str outdir, const Gals& Secret,const MTL& M, const Plates& P, const PP& pp, Feat& F, const Assignment& A, bool latex) {
 	printf("# Results :\n");
-
+    std::cout.flush();
 	// 1 Raw numbers of galaxies by id and number of remaining observations
 	int MaxObs = max(F.goal);
 	Table obsrv = initTable(F.Categories-2,MaxObs+1);
 
-	for (int g=0; g<M.size(); g++) {
+	for (int g=0; g<Secret.size(); g++) {//was M.size
         if(!M[g].SS && !M[g].SF){
 		int c= Secret[g].id;
 		int m = min(M[g].nobs_done,MaxObs);
