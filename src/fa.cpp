@@ -204,6 +204,8 @@ int main(int argc, char **argv) {
     List SF_hist=initList(41,0);
     for(int jused=0;jused<F.NUsedplate;++jused){
         int j=A.suborder[jused];
+        printf("j = %d  jused= %d\n",j,jused);
+        std::cout.flush();
         for (int p=0;p<F.Npetal;++p){
             int count_SS=0;
             int count_SF=0;
