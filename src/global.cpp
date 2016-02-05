@@ -644,10 +644,7 @@ void display_results(str outdir, const Gals& Secret,const MTL& M, const Plates& 
 
 		int c= Secret[g].id;
 		int m = min(M[g].nobs_done,MaxObs);
-        if(g>590000){
-                printf("g  %d  secret id  %d   m  %d\n",g,c,m);
-                std::cout.flush();
-        }
+
         obsrv[c][m]++; //
         }
 	}
