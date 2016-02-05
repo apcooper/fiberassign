@@ -242,7 +242,7 @@ int main(int argc, char **argv) {
     printf("\n");
     for(int i=30;i<40;i++)printf("%8d",SF_hist[i]);
     printf("\n %8d \n",SF_hist[40]);
-
+    std::cout.flush();
     
 
  
