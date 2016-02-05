@@ -221,7 +221,11 @@ int main(int argc, char **argv) {
         }
     }
     printf(" SS distribution \n");
-    for(int i=0;i<10;i++)printf("%8d",SS_hist[i]);
+    std::cout.flush();
+    for(int i=0;i<10;i++){
+        printf("%8d",SS_hist[i]);
+        std::cout.flush90;
+    }
     printf("\n %8d \n",SS_hist[10]);
  
     printf(" SF distribution \n");
