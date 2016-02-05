@@ -158,8 +158,7 @@ int main(int argc, char **argv) {
     //try assigning SF and SS before real time assignment
     for (int jused=0;jused<F.NUsedplate;++jused){
         int j=A.suborder[jused];
-        printf("j = %d  jused= %d\n",j,jused);
-        std::cout.flush();
+ 
         assign_sf_ss(j,M,P,pp,F,A); // Assign SS and SF for each tile
         assign_unused(j,M,P,pp,F,A);
     }
@@ -204,8 +203,7 @@ int main(int argc, char **argv) {
     List SF_hist=initList(41,0);
     for(int jused=0;jused<F.NUsedplate;++jused){
         int j=A.suborder[jused];
-        printf("j = %d  jused= %d\n",j,jused);
-        std::cout.flush();
+
         for (int p=0;p<F.Npetal;++p){
             int count_SS=0;
             int count_SF=0;

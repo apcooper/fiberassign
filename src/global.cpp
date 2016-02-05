@@ -641,12 +641,13 @@ void display_results(str outdir, const Gals& Secret,const MTL& M, const Plates& 
 
 	for (int g=0; g<Secret.size(); g++) {//was M.size
         if(!M[g].SS && !M[g].SF){
+
 		int c= Secret[g].id;
 		int m = min(M[g].nobs_done,MaxObs);
-            if(g%10000==0){
+        if(g>590000){
                 printf("g  %d  secret id  %d   m  %d\n",g,c,m);
                 std::cout.flush();
-            }
+        }
         obsrv[c][m]++; //
         }
 	}
