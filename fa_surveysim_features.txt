@@ -1,13 +1,13 @@
 galFile /project/projectdirs/desi/mocks/preliminary/objects_ss_sf0.rdzipn
 tileFile /project/projectdirs/desi/software/edison/desimodel/0.3.1/data/footprint/desi-tiles.par
 fibFile /project/projectdirs/desi/software/edison/desimodel/0.3.1/data/focalplane/fiberpos.txt
-outDir /global/cscratch1/sd/rncahn/fa_output
+outDir /global/cscratch1/sd/lpinol/
 PrintAscii false
 PrintFits false
-Targfile /project/projectdirs/desi/mocks/preliminary/Targfile.txt
-SStarsfile /project/projectdirs/desi/mocks/preliminary/SStarsfile.txt
-SkyFfile /project/projectdirs/desi/mocks/preliminary/SkyFfile.txt
-Secretfile /project/projectdirs/desi/mocks/preliminary/Secretfile.txt
+Targfile /project/projectdirs/desi/mocks/preliminary/mtl/targets_mtl.fits
+SStarsfile /project/projectdirs/desi/mocks/preliminary/mtl/stdstars_mtl.fits
+SkyFfile /project/projectdirs/desi/mocks/preliminary/mtl/sky_mtl.fits
+Secretfile /project/projectdirs/desi/mocks/preliminary/mtl/truth_mtl.fits
 diagnose true
 
 

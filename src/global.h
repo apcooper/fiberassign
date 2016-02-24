@@ -53,6 +53,7 @@ void diagnostic(const MTL& M, const Gals& G, Feat& F, const Assignment& A);
 
 void write_FAtile_ascii(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A);
 
+void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A, const Gals& Secret);
 
 void fa_write(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A);
 

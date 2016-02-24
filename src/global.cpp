@@ -820,6 +820,33 @@ void write_FAtile_ascii(int j, str outdir, const MTL& M, const Plates& P, const 
     fclose(FA);
 }
 
+void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A,const Gals& Secret) {
+    FILE * FA;
+    str s = outdir+"tile"+i2s(j)+".txt";
+    FA = fopen(s.c_str(),"w");
+    for (int k=0; k<F.Nfiber; k++) {
+        int g = A.TF[j][k];
+              
+	if (g!=-1) {
+	  
+	  if (M[g].SS==1) {
+	    int  redshift=0;
+	    fprintf(FA,"%ld %d %f %f %d\n",M[g].id,M[g].t_priority,M[g].ra,M[g].dec,redshift);
+     	  }
+	  else if (M[g].SF==1) {
+	    int redshift=0;
+	    fprintf(FA,"%ld %d %f %f %d\n",M[g].id,M[g].t_priority,M[g].ra,M[g].dec,redshift);
+	  }
+          else
+	    fprintf(FA,"%ld %d %d %f %f %f\n",M[g].id,g,M[g].t_priority,M[g].ra,M[g].dec,Secret[g].z);    
+	    
+        }
+        else ;
+    }
+    fclose(FA);
+}
+
+
 
 
 void fa_write (int j, str outdir, const MTL & M, const Plates & P, const PP & pp, const Feat & F, const Assignment & A) {

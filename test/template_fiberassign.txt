@@ -1,15 +1,15 @@
-Targfile /project/projectdirs/desi/mocks/preliminary/mtl/targets_mtl_lite.fits
-SStarsfile /project/projectdirs/desi/mocks/preliminary/mtl/stdstar_mtl_lite.fits
-SkyFfile  /project/projectdirs/desi/mocks/preliminary/mtl/sky_mtl_lite.fits
-Secretfile /project/projectdirs/desi/mocks/preliminary/mtl/truth_mtl_lite.fits
+Targfile /project/projectdirs/desi/mocks/preliminary/mtl/v1/targets_mtl_lite.fits
+SStarsfile /project/projectdirs/desi/mocks/preliminary/mtl/v1/stdstar_mtl_lite.fits
+SkyFfile  /project/projectdirs/desi/mocks/preliminary/mtl/v1/sky_mtl_lite.fits
+Secretfile /project/projectdirs/desi/mocks/preliminary/mtl/v1/truth_mtl_lite.fits
 
 tileFile /project/projectdirs/desi/software/edison/desimodel/0.3.1/data/footprint/desi-tiles.par
 fibFile /project/projectdirs/desi/software/edison/desimodel/0.3.1/data/focalplane/fiberpos.txt
-outDir {outdir}
+outDir /project/projectdirs/desi/users/lpinol/
 
 PrintAscii true
-PrintFits true
-diagnose true
+PrintFits false
+diagnose false
 
 kind QSOLy-a QSOTracer LRG ELG FakeQSO FakeLRG SS SF
 type QSO QSO LRG ELG QSO LRG SS SF
