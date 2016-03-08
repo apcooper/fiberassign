@@ -150,6 +150,7 @@ int main(int argc, char **argv) {
 
     printf(" Plates actually used %d \n",F.NUsedplate);
     std::cout.flush();    
+
     if(F.diagnose)diagnostic(M,Secret,F,A);
 
     print_hist("Unused fibers",5,histogram(A.unused_fbp(pp,F),5),false); // Hist of unused fibs
