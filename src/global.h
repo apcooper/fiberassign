@@ -55,6 +55,8 @@ void write_FAtile_ascii(int j, str outdir, const MTL& M, const Plates& P, const 
 
 void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A, const Gals& Secret);
 
+void write_FB_ascii(const MTL& M,const Gals& Secret);
+
 void fa_write(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A);
 
 

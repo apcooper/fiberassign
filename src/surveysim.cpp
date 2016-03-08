@@ -248,9 +248,11 @@ int main(int argc, char **argv) {
 
  
     // Results -------------------------------------------------------
-    if (F.PrintAscii) for (int jused=0; jused<F.NUsedplate; jused++){
+    /*  if (F.PrintAscii) for (int jused=0; jused<F.NUsedplate; jused++){
         write_FAtile_ascii_ps(A.suborder[jused],F.outDir,M,P,pp,F,A,Secret);
     }
+    */  //
+    if (F.PrintAscii) write_FB_ascii(M,Secret);
     
     if (F.PrintFits) for (int jused=0; jused<F.NUsedplate; jused++){
         fa_write(A.suborder[jused],F.outDir,M,P,pp,F,A); // Write output

@@ -830,20 +830,42 @@ void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, con
 	if (g!=-1) {
 	  
 	  if (M[g].SS==1) {
-	    int  redshift=0;
-	    fprintf(FA,"%ld %d %f %f %d\n",M[g].id,M[g].t_priority,M[g].ra,M[g].dec,redshift);
+	    int  redshift=0,type=6;
+	    fprintf(FA,"%d %ld %f %f %d\n",type,M[g].id,M[g].ra,M[g].dec,redshift);
      	  }
 	  else if (M[g].SF==1) {
-	    int redshift=0;
-	    fprintf(FA,"%ld %d %f %f %d\n",M[g].id,M[g].t_priority,M[g].ra,M[g].dec,redshift);
+	    int redshift=0,type=7;
+	    fprintf(FA,"%d %ld %f %f %d\n",type,M[g].id,M[g].ra,M[g].dec,redshift);
 	  }
           else
-	    fprintf(FA,"%ld %d %d %f %f %f\n",M[g].id,g,M[g].t_priority,M[g].ra,M[g].dec,Secret[g].z);    
+	    fprintf(FA,"%d %ld %f %f %f\n",Secret[g].id,M[g].id,M[g].ra,M[g].dec,Secret[g].z);    
 	    
         }
         else ;
     }
     fclose(FA);
+}
+
+void write_FB_ascii(const MTL&M, const Gals& Secret) {
+    FILE * FB;
+    FILE*FC;
+    str s = "/global/homes/l/lpinol/desi/python/";
+    
+    FB = fopen((s+"ELGs_targets").c_str(),"w");
+    FC = fopen((s+"test_M_Secret").c_str(),"w");
+    int g=0;
+    for (g=0;g<Secret.size();g++) {          
+	if (g!=-1) {
+	  if (Secret[g].id==3) {
+	    fprintf(FB,"%f %f %f\n",M[g].ra,M[g].dec,Secret[g].z);  
+	    fprintf(FC,"%d %d \n",M[g].id,Secret[g].targetid);
+	  }
+	  else ;  
+        }
+        else ;
+    }
+    fclose(FB);
+    fclose(FC);
 }
 
 
