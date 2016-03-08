@@ -837,7 +837,7 @@ void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, con
 	    fprintf(FA,"%d %ld %f %f %d\n",type,M[g].id,M[g].ra,M[g].dec,redshift);
 	  }
           else
-	    fprintf(FA,"%d %ld %f %f %f\n",Secret[g].id,M[g].id,M[g].ra,M[g].dec,Secret[g].z);    
+	    fprintf(FA,"%d %ld %f %f %f\n",Secret[g].category,M[g].id,M[g].ra,M[g].dec,Secret[g].z);    
 	    
         }
         else ;
@@ -855,7 +855,7 @@ void write_FB_ascii(const MTL&M, const Gals& Secret) {
     int g=0;
     for (g=0;g<Secret.size();g++) {          
 	if (g!=-1) {
-	  if (Secret[g].id==3) {
+	  if (Secret[g].category==3) {
 	    fprintf(FB,"%f %f %f\n",M[g].ra,M[g].dec,Secret[g].z);  
 	    fprintf(FC,"%d %d \n",M[g].id,Secret[g].targetid);
 	  }
