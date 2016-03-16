@@ -1,7 +1,7 @@
 galFile /project/projectdirs/desi/mocks/preliminary/objects_ss_sf0.rdzipn
 tileFile /project/projectdirs/desi/software/edison/desimodel/0.3.1/data/footprint/desi-tiles.par
 fibFile /project/projectdirs/desi/software/edison/desimodel/0.3.1/data/focalplane/fiberpos.txt
-outDir /global/homes/l/lpinol/desi/fiberassign/output
+outDir /global/homes/l/lpinol/desi/fiberassign/output/tiles/
 
 PrintAscii true
 PrintFits false

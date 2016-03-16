@@ -125,18 +125,6 @@ inline bool ok_for_limit_SS_SF(int g, int j, int k, const MTL& M, const Plates& 
 inline int find_best(int j, int k, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A) {
     int best = -1; int mbest = -1; int pbest = 0;
     List av_gals = P[j].av_gals[k];
-
-    //Reorder av_gals according to decreasing M[av_gals[gg]].id which are randoms so the best for same priority is random, whereas av_gals[gg] are not
-    for (int i=0; i<av_gals.size(); i++) {
-        for (int j=0; j<av_gals.size(); j++) {
-	    if (M[av_gals[j]].id<M[av_gals[i]].id) {
-                int a=-1;
-                a=av_gals[j];
-                av_gals[j]=av_gals[i];
-                av_gals[i]=a;
-	    }
-	}
-    }
     
 
     // For all available galaxies
@@ -148,7 +136,7 @@ inline int find_best(int j, int k, const MTL& M, const Plates& P, const PP& pp, 
             if (m>=1) {
                 int prio = M[g].t_priority;
                 // Takes it if better priority, or if same, if it needs more observations, so shares observations if two QSOs are close
-                if (prio>pbest || (prio==pbest && m>mbest)){
+                if (prio>pbest || (prio==pbest && m>mbest) || (prio==pbest && m==mbest && M[g].id<M[best].id)){
                     // Check that g is not assigned yet on this plate, or on the InterPlate around, check with ok_to_assign
                     int isa=A.is_assigned_jg(j,g,M,F);
                     int ok=ok_assign_g_to_jk(g,j,k,P,M,pp,F,A);
