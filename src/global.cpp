@@ -125,6 +125,20 @@ inline bool ok_for_limit_SS_SF(int g, int j, int k, const MTL& M, const Plates& 
 inline int find_best(int j, int k, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A) {
     int best = -1; int mbest = -1; int pbest = 0;
     List av_gals = P[j].av_gals[k];
+
+    //Reorder av_gals according to decreasing M[av_gals[gg]].id which are randoms so the best for same priority is random, whereas av_gals[gg] are not
+    for (int i=0; i<av_gals.size(); i++) {
+        for (int j=0; j<av_gals.size(); j++) {
+	    if (M[av_gals[j]].id<M[av_gals[i]].id) {
+                int a=-1;
+                a=av_gals[j];
+                av_gals[j]=av_gals[i];
+                av_gals[i]=a;
+	    }
+	}
+    }
+    
+
     // For all available galaxies
     for (int gg=0; gg<av_gals.size(); gg++) {
         int g = av_gals[gg];
@@ -852,7 +866,7 @@ void write_FB_ascii(const MTL&M, const Gals& Secret) {
     str s = "/global/homes/l/lpinol/desi/python/";
     
     FB = fopen((s+"ELGs_targets").c_str(),"w");
-    FC = fopen((s+"test_M_Secret").c_str(),"w");
+    FC = fopen((s+"test_M_Secret2").c_str(),"w");
     int g=0;
     for (g=0;g<Secret.size();g++) {          
 	if (g!=-1) {
