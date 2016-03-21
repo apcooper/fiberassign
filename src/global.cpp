@@ -237,8 +237,6 @@ void simple_assign(MTL &M, Plates& P, const PP& pp, const Feat& F, Assignment& A
     for (int j=0; j<F.Nplate; j++) {
          int best=-1;
     for (int k=0; k<F.Nfiber; k++) { // Fiber
-        if(j<10 && k<100)printf(" j %d k %d \n ",j,k);
-
       best=assign_fiber(j,k,M,P,pp,F,A);
       if (best!=-1)countme++;
     }
