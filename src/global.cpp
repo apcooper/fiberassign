@@ -822,7 +822,7 @@ void write_FAtile_ascii(int j, str outdir, const MTL& M, const Plates& P, const 
 
 void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, const PP& pp, const Feat& F, const Assignment& A,const Gals& Secret) {
     FILE * FA;
-    str s = outdir+"tile"+i2s(j)+".txt";
+    str s = outdir+"/tile"+i2s(j)+".txt";
     FA = fopen(s.c_str(),"w");
     for (int k=0; k<F.Nfiber; k++) {
         int g = A.TF[j][k];
@@ -849,7 +849,7 @@ void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, con
 void write_FB_ascii(const MTL&M, const Gals& Secret) {
     FILE * FB;
     FILE*FC;
-    str s = "/global/homes/l/lpinol/desi/python/";
+    str s = outdir+"/desi/python/";
     
     FB = fopen((s+"ELGs_targets").c_str(),"w");
     FC = fopen((s+"test_M_Secret2").c_str(),"w");
