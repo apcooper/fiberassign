@@ -255,7 +255,7 @@ int main(int argc, char **argv) {
         write_FAtile_ascii_ps(A.suborder[jused],F.outDir,M,P,pp,F,A,Secret);
     }
     
-    if (F.PrintAscii) write_FB_ascii(F.outDir,M,Secret);
+    //if (F.PrintAscii) write_FB_ascii(F.outDir,M,Secret);
     
     if (F.PrintFits) for (int jused=0; jused<F.NUsedplate; jused++){
         fa_write(A.suborder[jused],F.outDir,M,P,pp,F,A); // Write output
