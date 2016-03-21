@@ -846,7 +846,7 @@ void write_FAtile_ascii_ps(int j, str outdir, const MTL& M, const Plates& P, con
     fclose(FA);
 }
 
-void write_FB_ascii(const MTL&M, const Gals& Secret) {
+void write_FB_ascii(str outdir, const MTL&M, const Gals& Secret) {
     FILE * FB;
     FILE*FC;
     str s = outdir+"/desi/python/";
