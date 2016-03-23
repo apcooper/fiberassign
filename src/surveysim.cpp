@@ -115,9 +115,9 @@ int main(int argc, char **argv) {
     
     //write for each galaxy, its RA, DEC, and number of available tfs
     FILE * FMap;
-    str smap=F.outDir+"/map.txt";
+    str smap=F.outDir+"/random_map.txt";
     FMap = fopen(smap.c_str(),"w");
-    for (int g=0; g<F.Ntarg;++g){
+    for (int g=F.Ntarg; g<F.Ngal;++g){
         fprintf(FMap," %f  %f   %d \n",M[g].ra,M[g].dec,M[g].av_tfs.size());
     }
     fclose(FMap);
