@@ -115,10 +115,16 @@ int main(int argc, char **argv) {
     
     //write for each galaxy, its RA, DEC, and number of available tfs
     FILE * FMap;
-    str smap=F.outDir+"/random_map.txt";
+    str smap=F.outDir+"/new_random_map.txt";
     FMap = fopen(smap.c_str(),"w");
     for (int g=F.Ntarg; g<F.Ngal;++g){
-        fprintf(FMap," %f  %f   %d \n",M[g].ra,M[g].dec,M[g].av_tfs.size());
+        Plist av_tfs=M[g].av_tfs;
+        std::vector <int>=no_dup_av_tfs;
+        for (int i=0;i<av_tfs.size();++i) no_dup_av_tfs.pushback(av_tfs[i].f);
+        std::set<int> s=(no_dup_av_tfs.begin(),no_dup_av_tfs.end());
+        int no_dup_size=s.size();
+        
+        fprintf(FMap," %f  %f   %d  %d\n",M[g].ra,M[g].dec,av_tfs.size(),no_dup_size);
     }
     fclose(FMap);
     
