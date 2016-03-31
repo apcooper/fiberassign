@@ -572,7 +572,8 @@ Plates read_plate_centers(const Feat& F) {
         ss>> start;
         ss>>tileid>>ra >> dec >> ipass>>in_desi>>ebv>>airmass>>exposefac;   
         //only keep those in footprint, fix ra to lie between 0 and 360
-        if (in_desi==1) {
+        //use only five passes
+        if (in_desi==1&&ipass<6) {
             if (ra<   0.) {ra += 360.;}
             if (ra>=360.) {ra -= 360.;}
             if (dec<-90. || dec>90.) {
