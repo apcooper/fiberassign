@@ -119,11 +119,11 @@ int main(int argc, char **argv) {
     FMap = fopen(smap.c_str(),"w");
     for (int g=F.Ntarg; g<F.Ngal;++g){
         Plist av_tfs=M[g].av_tfs;
-        std::vector <int>=no_dup_av_tfs;
+        std::vector <int> no_dup_av_tfs;
         for (int i=0;i<av_tfs.size();++i) no_dup_av_tfs.pushback(av_tfs[i].f);
         std::sort<int> (no_dup_av_tfs.begin(),no_dup_av_tfs.end());
         no_dup_av_tfs.erase(std::unique(no_dup_av_tfs.begin(),no_dup_av_tfs.end()),no_dup_av_tfs.end());
-        int no_dup_size=s.size();
+        int no_dup_size=no_dup_av_tfs.size();
         
         fprintf(FMap," %f  %f   %d  %d\n",M[g].ra,M[g].dec,av_tfs.size(),no_dup_size);
     }
