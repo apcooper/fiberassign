@@ -115,7 +115,7 @@ int main(int argc, char **argv) {
     
     //write for each galaxy, its RA, DEC, and number of available tfs
     FILE * FMap;
-    str smap=F.outDir+"/new_random_map.txt";
+    str smap=F.outDir+"/random_tiles_new_random_map.txt";
     FMap = fopen(smap.c_str(),"w");
     for (int g=F.Ntarg; g<F.Ngal;++g){
         Plist av_tfs=M[g].av_tfs;
