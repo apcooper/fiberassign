@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
     for (int g=F.Ntarg; g<F.Ngal;++g){
         Plist av_tfs=M[g].av_tfs;
         std::vector <int> no_dup_av_tfs;
-        for (int i=0;i<av_tfs.size();++i) no_dup_av_tfs.pushback(av_tfs[i].f);
+        for (int i=0;i<av_tfs.size();++i) no_dup_av_tfs.push_back(av_tfs[i].f);
         std::sort<int> (no_dup_av_tfs.begin(),no_dup_av_tfs.end());
         no_dup_av_tfs.erase(std::unique(no_dup_av_tfs.begin(),no_dup_av_tfs.end()),no_dup_av_tfs.end());
         int no_dup_size=no_dup_av_tfs.size();
